@@ -1,0 +1,47 @@
+@media print{
+    .imgsfondo{
+        background-image: none!important;
+
+    }
+    h1, h2{
+        color: grey!important;
+        opacity: 0.6;
+        
+        }
+  
+   body{  font-size: 30px;
+    color: gray;
+    background-color: none;
+     
+}
+header {
+    background-color: trasparent;
+}
+main img{
+    display:none;
+   
+}
+aside img{
+    display: none;
+
+}
+footer{background-color: transparent!important;
+
+}
+#button{  background-color: grey!important;
+    opacity: 0.5;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border:transparent!important;
+    border-radius: none;
+    
+    padding: 10px 50px;
+    
+}
+.rosso {
+    background-color: white!important;
+    color:grey!important;
+}
+}
