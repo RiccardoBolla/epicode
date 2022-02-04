@@ -1,0 +1,341 @@
+body {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.background-image-container {
+    position: relative;
+    background-image: url(../img/banner.jpg);
+    height: -2px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 90px 10px 30px;
+}
+.prodotti {
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+.prodotti > div {
+    padding: 5px;
+    order: 0;
+    flex-basis: 20%;
+   
+    
+}
+
+.prodotti > div:nth-child(2) {
+    order: 1;
+    flex-grow: 0;
+    flex-basis: 40%;
+}
+.prodotti > div:nth-child(3) {
+    order: 2;
+    flex-grow: 0;
+    flex-basis: 40%;
+}
+span {
+    text-align: center;
+}
+#ContainerBlue {
+    background-color: rgb(16, 16, 99);
+    color: white;
+    padding: 50px 50px;
+    text-align: center;
+}
+
+#foto1 {
+    width: 80%;
+}
+#fotoCS {
+    width: 100%;
+}
+
+
+.specifiche {
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+.specifiche > div {
+    padding: 5px;
+    order: 0;
+    flex-basis: 50%;
+   
+    
+}
+
+.specifiche > div:nth-child(2) {
+    order: 1;
+    flex-grow: 0;
+    flex-basis: 50%;
+}
+ul {
+    list-style-type: none;
+
+}
+
+li.conspunta:before {
+    font-family: FontAwesome;
+    content: "\F00C";
+    color: red;
+    border: 1px solid black;
+    border-radius: 100%;
+    padding: 5px;
+}
+li.conspunta2:before {
+    font-family: FontAwesome;
+    content: "\F00C";
+    color: red;
+    padding: 5px;
+}
+
+
+.fa-twitter:before {
+    content: "\f099";
+    border: 0.5px solid black;
+    border-radius: 100%;
+    padding: 5px;
+    
+}
+.fa-linkedin:before {
+    content: "\f0e1";
+    border: 0.5px solid black;
+    border-radius: 100%;
+    padding: 5px;
+    
+}
+.fa-facebook-f:before, .fa-facebook:before {
+    content: "\f09a";
+    border: 0.5px solid black;
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.boxcolori {
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+.boxcolori > .item1 {
+    background-color: palegreen;
+    padding: 40px;
+    order: 0;
+    text-align: center;
+    flex-basis: 20%;
+    
+}
+
+.boxcolori > .item2 {
+    background-color: rgb(150, 148, 148);
+    flex-grow: 0;
+    flex-basis: 40%;
+    text-align: left;
+    padding-bottom: 100px;
+    width: 100%;
+    padding-top: 50px;
+    line-height: 4;
+}
+
+.boxcolori > .item3 {
+    background-color: rgb(241, 36, 36);
+    padding: 40px;
+    order: 0;
+    text-align: center;
+    flex-basis: 20%;
+   
+    
+}
+.boxcolori > .item4 {
+    background-color: rgb(150, 148, 148);
+    flex-grow: 0;
+    flex-basis: 40%;
+    text-align: left;
+    padding-bottom: 100px;
+    width: 100%;
+    padding-top: 50px;
+    line-height: 4;
+}
+.boxcolori > .item5 {
+    background-color: rgb(196, 196, 38);
+    padding: 40px;
+    order: 0;
+    text-align: center;
+    flex-basis: 20%;
+   
+    
+}
+.boxcolori > .item6 {
+    background-color: rgb(150, 148, 148);
+    flex-grow: 0;
+    flex-basis: 40%;
+    text-align: left;
+    padding-bottom: 100px;
+    width: 100%;
+    padding-top: 50px;
+    line-height: 4;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    margin-top: 150px;
+    margin-left: 30px;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+@media screen and (min-width: 768px) {
+    .prodotti {
+        display:flex;
+        flex-direction: row;
+        align-items: stretch;
+    
+    }
+    .prodotti > div {
+        padding: 5px;
+        order: 0;
+        flex-basis: 33%;
+       
+        
+    }
+    
+    .prodotti > div:nth-child(2) {
+        order: 1;
+        flex-grow: 0;
+        flex-basis: 33%;
+    }
+    .prodotti > div:nth-child(3) {
+        order: 2;
+        flex-grow: 0;
+        flex-basis: 33%;
+    }
+    span {
+        text-align: center;
+    }
+
+    #ContainerBlue {
+        background-color: rgb(16, 16, 99);
+        color: white;
+        padding: 20px 50px;
+        text-align: center;
+        margin: 10px 0px;
+        box-sizing: border-box;
+    }
+
+    .specifiche {
+        display:flex;
+        flex-direction: row;
+        align-items: stretch;
+    
+    }
+    .specifiche > div {
+        padding: 5px;
+        order: 0;
+        flex-basis: 50%;
+       
+        
+    }
+    
+    .specifiche > div:nth-child(2) {
+        order: 1;
+        flex-grow: 0;
+        flex-basis: 50%;
+    }
+
+    .boxcolori {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    
+    }
+    .boxcolori > .item1 {
+        background-color: palegreen;
+        padding: 40px;
+        order: 0;
+        text-align: center;
+        flex-basis: 30%;
+        order: 1;
+        flex-shrink: 0;
+        margin: 5px 5px 0px 5px;
+    }
+    
+    .boxcolori > .item2 {
+        background-color: rgb(150, 148, 148);
+        flex-grow: 0;
+        flex-basis: 40%;
+        text-align: left;
+        padding-bottom: 200px;
+        width: 100%;
+        padding-top: 50px;
+        line-height: 4;
+        flex-basis: 30%;
+        order: 4;
+        flex-shrink: 0;
+        margin: 5px 5px 0px 5px;
+    }
+    
+    .boxcolori > .item3 {
+        background-color: rgb(241, 36, 36);
+        padding: 40px;
+        order: 0;
+        text-align: center;
+        flex-basis: 30%;
+        order: 2;
+        flex-shrink: 0;
+        margin: 5px 5px 0px 5px;
+        
+    }
+    .boxcolori > .item4 {
+        background-color: rgb(150, 148, 148);
+        flex-grow: 0;
+        flex-basis: 40%;
+        text-align: left;
+        padding-bottom: 200px;
+        width: 100%;
+        padding-top: 50px;
+        line-height: 4;
+        flex-basis: 30%;
+        order: 5;
+        flex-shrink: 0;
+        margin: 5px 5px 0px 5px;
+    }
+    .boxcolori > .item5 {
+        background-color: rgb(196, 196, 38);
+        padding: 40px;
+        order: 0;
+        text-align: center;
+        flex-basis: 30%;
+        order: 3;
+        flex-shrink: 0;
+        margin: 5px 5px 0px 5px;
+
+       
+        
+    }
+    .boxcolori > .item6 {
+        background-color: rgb(150, 148, 148);
+        flex-grow: 0;
+        flex-basis: 40%;
+        text-align: left;
+        padding-bottom: 200px;
+        width: 100%;
+        padding-top: 50px;
+        line-height: 4;
+        flex-basis: 30%;
+        order: 6;
+        flex-shrink: 0;
+        margin: 5px 5px 0px 5px;
+    }
+
+  
+    
+}
