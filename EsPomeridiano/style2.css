@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(64, 10, 190);
+    background-size: cover;
+}
+
+.viewport {
+    width: 42vw;    /*col vw rimane tutto responsive correttamente*/
+    height: 21vw;
+    position: absolute; /* position, top, left e transform translate servono per centrare il cubo*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   perspective: 1300px; 
+}
+.viewport::after { /* questo per ora sembra dare un'ombra nera, al di sotto del cubo*/
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 20%;
+    background-color: #000;
+    z-index: -1;
+    top: 140%;
+    left: -10%;
+    filter: blur(50px);
+}
+
+.face{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.cube {
+    width: 100%;
+    height: 33.3333333%;
+    position: relative;
+    transform-style: preserve-3d;/*Fornisce la prospettiva 3d*/
+    
+    
+    
+}
+
+/* prove Rotazione*/
+
+.cube-1 {
+    transition: transform .4s; /*specifica in quanti secondi deve avvenire la transizione*/
+}
+
+.cube-2 {
+    z-index: 10; /* indica l'ordine di stack, più è alto, prima l'elemento viene posizionato*/
+    transition: transform .4s .2s;
+}
+
+.cube-3 {
+    transition: transform .4s .4s;
+}
+
+/*Costruisce le facce del cubo*/
+.front {
+    transform: translateZ(21vw); /*sposta sull'asse z quindi in profondità questa non è ruotata perchè è davanti*/
+}
+.back { /* faccia dietro, attaccata da translateX(-21vw) e ruotata di 180 gradi sull'asse Y*/
+    transform: translateZ(-21vw) rotateY(180deg);
+}
+.left { /* faccia sinistra, attaccata da translateX(-21vw) e ruotata di -90gradi sull'asse Y*/
+    transform: translateX(-21vw) rotateY(-90deg);
+}
+.right { /* faccia destra, attaccata da translateX(21vw) e ruotata di 90gradi sull'asse Y*/
+    transform: translateX(21vw) rotateY(90deg);
+}
+/*fine costruisce le facce del cubo*/
+
+
+
+/*Fine prove rotazione*/
+/* Facce front*/
+.cube-1>.front{
+    /*è solo background e non background-image come avevamo messo, non sto capendo l'uso di no-repeat 50%  */
+    background: url(./cubo1.jpg) no-repeat 50% 0;
+    /*senza cover, non si vede l'immagine*/
+    background-size: cover;
+      
+
+}
+.cube-2>.front{
+    /*il -7vw serve per far vedere la seconda parte dell'immagine*/
+    background: url(./cubo1.jpg) no-repeat 50% -7vw;
+    background-size: cover;
+    
+}
+.cube-3>.front{
+    background: url(./cubo1.jpg) no-repeat 50% -14vw;;
+    background-size: cover;
+    /*il -14vw si poteva ottenere pure col
+    background-position:  0 -160;*/
+}
+
+/* Facce right*/
+.cube-1>.right{
+    background: url(./cubo2.jpg) no-repeat 50% 0;
+    background-size: cover;
+    }
+.cube-2>.right{
+    background: url(./cubo2.jpg) no-repeat 50% -7vw;
+    background-size: cover;
+    
+}
+.cube-3>.right{
+    background: url(./cubo2.jpg) no-repeat 50% -14vw;
+    background-size: cover;
+    
+}
+
+/* Facce back*/
+.cube-1>.back{
+    background: url(./cubo3.jpg) no-repeat 50% 0;
+    background-size: cover;
+    
+}
+.cube-2>.back{
+    background: url(./cubo3.jpg) no-repeat 50% -7vw;
+    background-size: cover;
+    
+}
+.cube-3>.back{
+    background: url(./cubo3.jpg) no-repeat 50% -14vw;
+    background-size: cover;
+    
+}
+
+/* Facce left*/
+.cube-1>.left{
+    background: url(./cubo4.jpg) no-repeat 50% 0;
+    background-size: cover;
+    /*background-attachment: fixed;*/    
+    background-position: 0 0;
+}
+.cube-2>.left{
+    background: url(./cubo4.jpg) no-repeat 50% -7vw;
+    background-size: cover;
+    /*background-attachment: fixed;*/   
+    background-position:  0 -200px;
+}
+.cube-3>.left{
+    background: url(./cubo4.jpg) no-repeat 50% -14vw;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    background-position:  0 -400px;
+}
+.top {
+    height: 42vw;
+    background-color: #111;
+    transform: translateY(-21vw) rotateX(90deg);
+}
+.bottom {
+    height: 42vw;
+    background-color: #111;
+    transform: translateY(-14vw) rotateX(-90deg);
+}
+.control {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    background-color: rgba(59, 52, 50, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color .3s;
+}
+.control:hover {
+    background-color: rgba(42, 38, 36, .8);
+}
+.left-arrow {
+    top: 50%;
+    left: -35%;
+}
+.right-arrow {
+    top: 50%;
+    left: 135%;
+}
+.play-pause {
+    top: 140%;
+    left: 120%;
+}
+.control i {
+    pointer-events: none;
+}
